@@ -24,6 +24,8 @@ apps:
     command: bin/chafa
     plugs: 
       - network
+      - home
+      - removable-media
 parts:
   chafa:
     # See 'snapcraft plugins'
