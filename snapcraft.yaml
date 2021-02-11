@@ -9,7 +9,6 @@ description: |
   for alpha transparency, multiple colour modes and colour spaces, 
   combining selectable ranges of Unicode characters to product the desired
   output.
-
 architectures:
   - build-on: amd64
   - build-on: arm64
@@ -32,8 +31,7 @@ parts:
     plugin: autotools
     source: https://github.com/hpjansson/chafa.git
     build-packages: [automake, libtool, libglib2.0-dev, libmagickwand-dev, gtk-doc-tools, docbook-xml, libxml2-utils]
-    stage-packages: [imagemagick]
+    stage-packages: [imagemagick, libmagickwand-6.q16-3, libgif7]
     override-pull: |
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed -e 's/^v//')"
-
